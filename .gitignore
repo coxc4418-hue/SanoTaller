@@ -1,0 +1,15 @@
+node_modules/
+.firebase/
+*-debug.log
+CREDENCIALES_*.txt
+scripts/.accounts*.json
+scripts/shots/
+scripts/tutorial/work/
+/Tutorial/
+.tmp/
+.ref/
+/VIDEO_TUTORIAL_*.mp4
+
+.accounts*.json
+ENVIAR_DEMO_*.txt
+scripts/*.png

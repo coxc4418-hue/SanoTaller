@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>SanoTaller — Gestión para talleres y autolavados</title>
+  <meta name="description" content="SanoTaller: sistema para talleres mecánicos y autolavados de Latinoamérica. Recepción del vehículo con kilometraje, combustible, inspección y daños; órdenes de trabajo en tablero; presupuesto que el cliente aprueba desde su teléfono; mantenimiento por kilometraje con avisos por WhatsApp; autolavado con cola por placa; repuestos con inventario y equivalentes; punto de venta, compras, caja en dos monedas, comisiones por mecánico y reportes. Funciona en el teléfono y en la computadora, también sin internet.">
+  <meta name="theme-color" content="#081634">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="SanoTaller">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" type="image/svg+xml" href="/assets/logo.svg">
+  <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/app.css">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('sv_theme');
+        if (!t) t = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <div id="boot" class="boot">
+    <div class="boot-inner">
+      <img src="/assets/icon-192.png" alt="SanoTaller">
+      <div class="spinner"></div>
+    </div>
+  </div>
+  <div id="root"></div>
+  <div id="modals"></div>
+  <div id="toasts" class="toasts"></div>
+  <noscript>SanoTaller necesita JavaScript habilitado.</noscript>
+  <script type="module" src="/js/main.js"></script>
+</body>
+</html>

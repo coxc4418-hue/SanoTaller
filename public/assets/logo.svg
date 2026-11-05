@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="stBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2563eb"/>
+      <stop offset=".55" stop-color="#1e3a8a"/>
+      <stop offset="1" stop-color="#0c2366"/>
+    </linearGradient>
+    <linearGradient id="stGear" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset=".65" stop-color="#dbeafe"/>
+      <stop offset="1" stop-color="#93c5fd"/>
+    </linearGradient>
+    <linearGradient id="stKey" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fde68a"/>
+      <stop offset=".5" stop-color="#fbbf24"/>
+      <stop offset="1" stop-color="#d97706"/>
+    </linearGradient>
+    <radialGradient id="stGlow" cx=".5" cy=".42" r=".55">
+      <stop offset="0" stop-color="#93c5fd" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#93c5fd" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="stShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#04102e" flood-opacity=".55"/>
+    </filter>
+    <mask id="stJaw" maskUnits="userSpaceOnUse" x="-256" y="-256" width="512" height="512">
+      <rect x="-256" y="-256" width="512" height="512" fill="#fff"/>
+      <rect x="128" y="-17" width="80" height="34" fill="#000"/>
+      <circle cx="-122" cy="0" r="15" fill="#000"/>
+    </mask>
+  </defs>
+  <rect width="512" height="512" rx="120" fill="url(#stBg)"/>
+  <circle cx="256" cy="236" r="230" fill="url(#stGlow)"/>
+  <g filter="url(#stShadow)">
+    <circle cx="256" cy="256" r="150" fill="none" stroke="url(#stGear)" stroke-width="46" stroke-dasharray="39.27 39.27"/>
+    <circle cx="256" cy="256" r="122" fill="none" stroke="url(#stGear)" stroke-width="40"/>
+    <g transform="translate(256 256) rotate(-45)">
+      <g mask="url(#stJaw)" fill="url(#stKey)">
+        <rect x="-128" y="-22" width="232" height="44" rx="22"/>
+        <circle cx="132" cy="0" r="52"/>
+        <circle cx="-122" cy="0" r="38"/>
+      </g>
+    </g>
+  </g>
+  <path fill="#fde68a" d="M410 84c4 20 10 26 30 30-20 4-26 10-30 30-4-20-10-26-30-30 20-4 26-10 30-30Z"/>
+</svg>
