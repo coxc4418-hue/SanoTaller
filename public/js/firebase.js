@@ -12,13 +12,12 @@ import {
 } from 'https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js';
 
 export const firebaseConfig = {
-  // PENDIENTE: se reemplaza con la configuración real al crear el proyecto sano-taller en Firebase
-  apiKey: 'AIzaSy-PENDIENTE-sano-taller',
+  apiKey: 'AIzaSyCL-1YOatBbeUOVJNpfW3bDgX06lGuqGl0',
   authDomain: 'sano-taller.firebaseapp.com',
   projectId: 'sano-taller',
   storageBucket: 'sano-taller.firebasestorage.app',
-  messagingSenderId: '000000000000',
-  appId: '1:000000000000:web:pendiente'
+  messagingSenderId: '377461797344',
+  appId: '1:377461797344:web:7bdf2203538cce8ec8fb85'
 };
 
 // Emuladores locales solo para pruebas (http://localhost:...?emu=1)

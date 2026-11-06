@@ -19,12 +19,12 @@ const DOMAIN = 'sanotaller.app';
 const APP_URL = 'https://sano-taller.web.app';
 
 const config = {
-  apiKey: 'AIzaSy-PENDIENTE-sano-taller',
+  apiKey: 'AIzaSyCL-1YOatBbeUOVJNpfW3bDgX06lGuqGl0',
   authDomain: 'sano-taller.firebaseapp.com',
   projectId: 'sano-taller',
   storageBucket: 'sano-taller.firebasestorage.app',
-  messagingSenderId: '0',
-  appId: '1:0:web:pendiente'
+  messagingSenderId: '377461797344',
+  appId: '1:377461797344:web:7bdf2203538cce8ec8fb85'
 };
 
 // Configuración inicial de cada sede. Los planes, servicios, categorías y demás valores salen de DEFAULT_SETTINGS
