@@ -4,6 +4,7 @@ import { store, getTenant } from './store.js';
 import { session, login, logout, authErrorMessage, SUPER_EMAIL, usernameOf } from './auth.js';
 import { esc, toast, closeAllModals, $, $$, setBusy, confirmDialog, toggleTheme, openModal, fmtDate, loc, flagImg, debounce, todayKey } from './utils.js';
 import { icon } from './icons.js';
+import { rateChip, startBcv } from './bcv.js';
 import { openCountryPicker, salesWa, SALES_PHONE_FMT } from './shared.js';
 import { isStandalone, platform, bindInstallButtons } from './install.js';
 
@@ -228,7 +229,7 @@ async function enterTenant(tenantId) {
   if (st !== 'ok' && !session.isSuper) { renderBlocked(t, st); return; }
   if (session.isSuper) sessionStorage.setItem('sv_view_tenant', tenantId);
 
-  await store.start(tenantId);
+  await store.start(tenantId); startBcv();
   renderShell();
   const hash = location.hash.replace(/^#\/?/, '');
   navigate(ROUTES[hash] ? hash : 'inicio', { replace: true });
@@ -281,14 +282,14 @@ async function enterDemo(user) {
   try { t = await getTenant(user.uid); } catch (_) {}
   if (!t) {
     await demo.createDemoTenant(user.uid);
-    await store.start(user.uid);
+    await store.start(user.uid); startBcv();
     hideBoot();
     await ensureCountry();
     showBoot();
     await demo.seedDemoActivity();
   } else {
     if (demo.demoRemainingMs(t) <= 0) { await endDemo(true); return; }
-    await store.start(user.uid);
+    await store.start(user.uid); startBcv();
   }
   renderShell();
   navigate('inicio', { replace: true, force: true });
@@ -412,7 +413,7 @@ function renderShell() {
           <div class="grow" style="min-width:0"><div class="tb-title ellipsis" id="tb-title">SanoTaller</div><div class="tb-sub ellipsis">${esc(tName)}</div></div>
           <button class="btn btn-ghost btn-icon" id="tb-search" aria-label="Buscar">${icon('search')}</button>
           ${isStandalone() ? '' : `<button class="btn btn-ghost btn-icon" data-install aria-label="Instalar app" title="Instalar app">${icon('install')}</button>`}
-          <button class="rate-mini" id="tb-rate" title="${esc(loc().name)}">${flagImg(loc().code)} ${esc(loc().cur)}</button>
+          <button class="rate-mini" id="tb-rate" title="${esc(loc().name)}">${rateChip()}</button>
         </header>
         <main class="content" id="view"></main>
       </div>
@@ -449,7 +450,7 @@ function renderShell() {
   storeUnsub = store.on('*', (evt) => {
     if (evt === 'settings' || evt === 'rate') {
       $('#sb-rate-val') && ($('#sb-rate-val').textContent = `${loc().cur} · ${loc().sym}`);
-      $('#tb-rate') && ($('#tb-rate').innerHTML = `${flagImg(loc().code)} ${loc().cur}`);
+      $('#tb-rate') && ($('#tb-rate').innerHTML = rateChip());
     }
     if (evt === 'tenant') {
       $('#sb-tenant-name') && ($('#sb-tenant-name').textContent = store.tenant?.name || store.businessName);
