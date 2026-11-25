@@ -1,5 +1,5 @@
 // SanoTaller — Service Worker (PWA, funcionamiento sin conexión)
-const VERSION = 'sanotaller-v1.1.1';
+const VERSION = 'sanotaller-v1.1.2';
 const SDK = 'https://www.gstatic.com/firebasejs/10.14.1/';
 const VIEWS = ['admin', 'agenda', 'card', 'cash', 'clients', 'dashboard', 'inventory', 'invoices', 'jobs', 'kiosk', 'loyalty', 'orders', 'pos', 'purchases', 'quote', 'reports', 'search', 'settings', 'shop', 'vehicles', 'wash'];
 const SHELL = [

@@ -87,7 +87,7 @@ function showSteps() {
       <div class="row" style="gap:14px"><img src="/assets/icon-192.png" alt="" style="width:56px;height:56px;border-radius:16px"><div><b>SanoTaller</b><div class="small muted">sano-taller.web.app</div></div></div>
       ${steps.map((s, i) => step(i + 1, s)).join('')}
       ${installed ? `<div class="small muted">${icon('info')} Si ya la instalaste en este equipo, búscala en el ${p === 'desktop' ? 'escritorio o en el menú Inicio' : 'cajón de aplicaciones'}.</div>` : ''}
-      <div class="box small">${icon('check')} Es el mismo sistema que en la web: tus datos, ventas e inventario se sincronizan en todos tus equipos. Imprime recibos desde la app como en el navegador.</div>
+      <div class="box small">${icon('check')} Es el mismo sistema que en la web: tus vehículos, órdenes, presupuestos y cobros se sincronizan en todos tus equipos. Imprime recibos desde la app como en el navegador.</div>
     </div>`,
     footer: '<button class="btn btn-primary" data-close>Entendido</button>'
   });
